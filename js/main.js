@@ -87,11 +87,12 @@ function cargarCuerpo(){
 function guardarNoticiaLateral(){
     var inputNoticiaLateral = document.querySelector('#inputNoticiaLateral');
     var noticiaLateral = inputNoticiaLateral.value;
-    inputNoticiaLateral.value = '';
-    noticiasLaterales.push(noticiaLateral);
-
-    console.log('guardada noticia lateral');
-    console.log(noticiasLaterales);
+    if( noticiaLateral!= null && noticiaLateral.length > 0){
+        inputNoticiaLateral.value = '';
+        noticiasLaterales.push(noticiaLateral);
+        console.log('guardada noticia lateral');
+        console.log(noticiasLaterales);
+    };
 };
 
 var listaLateral = document.querySelector('#listaLateral');

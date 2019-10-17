@@ -18,25 +18,9 @@
 </head>
 <body>
     
-    <div class="container-fluid text-center" id="divFormu">
+    <div class="container-fluid w-75 text-center" id="divFormu">
 
-        <div class="container-fluid border p-3 w-75 m-3" id="divFormLateral">
-
-            <form class="mb-3" id="formNoticiaLateral">
-
-                <h4>Barra lateral de noticias</h4>
-                <h6>Cargue la noticia y presione enviar para cargar otra</h6>
-
-                <input class="form-control" type="text" id="inputNoticiaLateral" placeholder="Noticias laterales"><br>
-
-                
-            </form>
-
-          <button class="btn btn-primary" id="enviarLateralButton">Enviar</button> 
-
-        </div>
-
-        <div class="container-fluid border m-3 p-3 w-75">
+        <div class="container-fluid border m-3 p-3">
             <h3>Noticia principal: </h3>
 
             <form id="formNoticia">
@@ -58,11 +42,24 @@
         
             </form>
 
-            <div class="container-fluid p-3 w-75">
-                    <button class="btn btn-primary" id="vistaPreviaButton">Vista Previa</button><br>
-            </div>
-
         </div>
+
+        <div class="container-fluid border p-3 m-3" id="divFormLateral">
+
+                <form class="mb-3" id="formNoticiaLateral">
+    
+                    <h4>Barra lateral de noticias</h4>
+                    <h6>Ingrese las noticias de a una y presione Cargar</h6>
+    
+                    <input class="form-control" type="text" id="inputNoticiaLateral" placeholder="Noticia lateral"><br>
+          
+                </form>
+    
+              <button class="btn btn-primary" id="enviarLateralButton">Cargar</button> 
+    
+        </div>
+
+            <button class="btn btn-primary" id="vistaPreviaButton">Vista Previa</button><br>
 
     </div>
 
