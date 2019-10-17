@@ -7,49 +7,59 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <title>Pagina formulario noticia</title>
+
+    <style>
+    .cutOverflowWord{
+        overflow: auto;
+        word-wrap: break-word;
+    };
+    </style>
+
 </head>
 <body>
     
     <div class="container-fluid" id="divFormu">
 
-        <div class="container-fluid">
-            <h3>Noticia principal: </h3>
+        <div class="container-fluid border p-3 w-75 m-3" id="divFormLateral">
 
-            <form id="form">
-
-                    <label for="inputTitulo">Ingrese Titulo</label>
-                    <input type="text" id="inputTitulo"><br>
-        
-                    <label for="inputSubtitulo">Ingrese subtitulo</label>
-                    <input type="text" id="inputSubTitulo"><br>
-        
-                    <label for="inputVolanta">Ingrese volanta</label>
-                    <input type="text" id="inputVolanta"><br>
-        
-                    <label for="inputCuerpo">Ingrese cuerpo de la Noticia</label>
-                    <input type="text" id="inputCuerpo"><br>
-
-        
-            </form>
-
-            <button id="vistaPreviaButton">Vista Previa</button><br>
-
-        </div>
-        <hr>
-        <div class="container-fluid" id="divFormLateral">
-
-            <form id="formLateral">
+            <form class="mb-3" id="formLateral">
 
                 <h4>Barra lateral de noticias</h4>
                 <h5>Cargue noticias de a una y presione enviar para cargar otra</h5>
 
-                <label for="input">Ingrese Titulo</label>
+                <label for="input">Ingrese Noticia Lateral</label><br>
                 <input type="text" id="inputNoticiaLateral"><br>
-
+                
             </form>
 
             <button id="enviarLateralButton">Enviar</button>
 
+        </div>
+
+        <div class="container-fluid border m-3 p-3 w-75">
+            <h3>Noticia principal: </h3>
+
+            <form id="form">
+
+                    <label for="inputTitulo">Ingrese Titulo</label><br>
+                    <input type="text" id="inputTitulo"><br>
+        
+                    <label for="inputSubtitulo">Ingrese subtitulo</label><br>
+                    <input type="text" id="inputSubTitulo"><br>
+        
+                    <label for="inputVolanta">Ingrese volanta</label><br>
+                    <input type="text" id="inputVolanta"><br>
+        
+                    <label for="inputCuerpo">Ingrese cuerpo de la Noticia</label><br>
+                    <input class="input-lg" type="text"  id="inputCuerpo"><br>
+
+        
+            </form>
+
+        </div>
+
+        <div class="container-fluid p-3 w-75">
+            <button id="vistaPreviaButton">Vista Previa</button><br>
         </div>
 
     </div>
@@ -59,27 +69,30 @@
 
         <header>
             <div class="container border-bottom mb-5">
-                <h5 class="text-warning" id="volanta"></h5>
-                <h1 id="titulo"></h1>
-                <h6 id="subTitulo"></h6>
+                <h5 class="text-warning cutOverflowWord" id="volanta"></h5>
+                <h1 class="cutOverflowWord" id="titulo"></h1>
+                <h6 class="cutOverflowWord" id="subTitulo"></h6>
             </div>
         </header>
 
-        <div class="container row mb-5">
+        <div class="row">
 
-            <div class="col-8" id="noticiaPrincipal">
-                <p id="cuerpo"></p>
+            <div class="col-8"> 
+                <p class="cutOverflowWord" id="cuerpo"></p>
             </div>
                 
             <div class="col-4">
-
-                    <ul class="list-unstyled" id="listaLateral">
-                        
+                    <h1 class="text-warning"><strong>__</strong></h1>
+                <h5>Noticias Laterales</h5>
+                <div class="border p-3">
+                    <ul class="list-unstyled" id="listaLateral">                       
                     </ul>
-
+                </div>
             </div>
 
-            <button id="editButton">Editar</button>
+            <div class="container-fluid p-3 w-75">
+                <button id="editButton">Editar Pagina</button>
+            </div>
 
         </div>
         

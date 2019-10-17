@@ -1,6 +1,7 @@
 'use strict'
 var noticiasLaterales = [];
 var divNoticia = document.querySelector('#divNoticia');
+divNoticia.style.display ='none';
 var divFormu = document.querySelector('#divFormu');
 
 var vistaPreviaButton = document.querySelector('#vistaPreviaButton');
@@ -18,13 +19,12 @@ editButton.addEventListener('click', function(){
 
 var enviarLateralButton = document.querySelector('#enviarLateralButton');
 enviarLateralButton.addEventListener('click', function(){
+    console.log('entre submit');
+    console.log(noticiasLaterales);
     guardarNoticiaLateral();
 });
 
-var formLateral = document.querySelector('#formLateral');
-formLateral.addEventListener('submit', function(){
 
-});
 
 function cargarNoticia(){
     cargarTitulo();
@@ -51,7 +51,7 @@ function cargarVolanta(){
 
 function cargarCuerpo(){
     var cuerpo = document.querySelector('#inputCuerpo').value;
-    document.querySelector('#cuerpo').innerHTML = cuerpo;
+    document.querySelector('#cuerpo').textContent = cuerpo;
 };
 
 function guardarNoticiaLateral(){
@@ -70,7 +70,7 @@ function cargarNoticiasLaterales(){
     noticiasLaterales.forEach( function( noticiaLateral ){//recorro el array de noticias y los cargo a la barra lateral en el dom
         var li = document.createElement('LI'); 
         li.className = 'media border-bottom';
-        li.innerHTML ='<h4 class="mt-3 mr-3">'+ i +'</h4><div class="media-body">'+ noticiaLateral +'</div>';
+        li.innerHTML ='<h4 class="mt-3 mr-3">'+ i +'</h4><div class="media-body cutOverflowWord">'+ noticiaLateral +'</div>';
         listaLateral.appendChild (li);
         i++;
         console.log('cargado lateral ' +i);
