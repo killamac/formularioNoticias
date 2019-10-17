@@ -18,48 +18,50 @@
 </head>
 <body>
     
-    <div class="container-fluid" id="divFormu">
+    <div class="container-fluid text-center" id="divFormu">
 
         <div class="container-fluid border p-3 w-75 m-3" id="divFormLateral">
 
-            <form class="mb-3" id="formLateral">
+            <form class="mb-3" id="formNoticiaLateral">
 
                 <h4>Barra lateral de noticias</h4>
-                <h5>Cargue noticias de a una y presione enviar para cargar otra</h5>
+                <h6>Cargue la noticia y presione enviar para cargar otra</h6>
 
-                <label for="input">Ingrese Noticia Lateral</label><br>
-                <input type="text" id="inputNoticiaLateral"><br>
+                <input class="form-control" type="text" id="inputNoticiaLateral" placeholder="Noticias laterales"><br>
+
                 
             </form>
 
-            <button id="enviarLateralButton">Enviar</button>
+          <button class="btn btn-primary" id="enviarLateralButton">Enviar</button> 
 
         </div>
 
         <div class="container-fluid border m-3 p-3 w-75">
             <h3>Noticia principal: </h3>
 
-            <form id="form">
+            <form id="formNoticia">
 
-                    <label for="inputTitulo">Ingrese Titulo</label><br>
-                    <input type="text" id="inputTitulo"><br>
-        
-                    <label for="inputSubtitulo">Ingrese subtitulo</label><br>
-                    <input type="text" id="inputSubTitulo"><br>
-        
-                    <label for="inputVolanta">Ingrese volanta</label><br>
-                    <input type="text" id="inputVolanta"><br>
-        
-                    <label for="inputCuerpo">Ingrese cuerpo de la Noticia</label><br>
-                    <input class="input-lg" type="text"  id="inputCuerpo"><br>
+                <input class="form-control" type="text" id="inputFecha" placeholder="Fecha"><br>
+
+                <input class="form-control" type="text" id="inputTitulo" placeholder="Titulo"><br>
+    
+                <input class="form-control" type="text" id="inputSubTitulo" placeholder="Subtitulo"><br>
+    
+                <input class="form-control" type="text" id="inputVolanta" placeholder="Volanta"><br>
+
+                <input class="form-control" type="text" id="inputUrlImg" placeholder="Url de la imagen"><br>
+
+                <input class="form-control" type="text" id="inputEpigrafe" placeholder="Epigrafe de la imagen"><br>
+    
+                <textarea class="form-control" id="inputCuerpo" rows="5" placeholder="Cuerpo de La Noticia"></textarea>
 
         
             </form>
 
-        </div>
+            <div class="container-fluid p-3 w-75">
+                    <button class="btn btn-primary" id="vistaPreviaButton">Vista Previa</button><br>
+            </div>
 
-        <div class="container-fluid p-3 w-75">
-            <button id="vistaPreviaButton">Vista Previa</button><br>
         </div>
 
     </div>
@@ -77,7 +79,14 @@
 
         <div class="row">
 
+
             <div class="col-8"> 
+                <figure >  
+                        <p class="text-secondary" id="fecha"></p>
+                        <img width="100%" id="urlImg">
+                        <figcaption class="text-secondary" id="epigrafe"></figcaption>  
+                </figure> 
+
                 <p class="cutOverflowWord" id="cuerpo"></p>
             </div>
                 
@@ -91,7 +100,7 @@
             </div>
 
             <div class="container-fluid p-3 w-75">
-                <button id="editButton">Editar Pagina</button>
+                <button class="btn btn-primary" id="editButton">Editar Pagina</button>
             </div>
 
         </div>

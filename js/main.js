@@ -17,21 +17,37 @@ editButton.addEventListener('click', function(){
     divNoticia.style.display ='none';
 });
 
+
 var enviarLateralButton = document.querySelector('#enviarLateralButton');
 enviarLateralButton.addEventListener('click', function(){
-    console.log('entre submit');
-    console.log(noticiasLaterales);
+   /* console.log('entre submit');
+    console.log(noticiasLaterales);*/
     guardarNoticiaLateral();
 });
 
+/*var  formNoticiaLateral = document.querySelector('#formNoticiaLateral');
+    formNoticiaLateral.addEventListener('submit', function(){
+    console.log(noticiasLaterales);
+    guardarNoticiaLateral();
+    console.log('entre submit');
+    console.log(noticiasLaterales);
+    alert('alert');
 
+});*/
 
 function cargarNoticia(){
+    cargarFecha();
     cargarTitulo();
     cargarSubTitulo();
     cargarVolanta();
+    cargarImagen();
     cargarCuerpo();
     cargarNoticiasLaterales();
+};
+
+function cargarFecha(){
+    var titulo = document.querySelector('#inputFecha').value;
+    document.querySelector('#fecha').innerHTML = titulo;
 };
 
 function cargarTitulo(){
@@ -47,6 +63,20 @@ function cargarSubTitulo(){
 function cargarVolanta(){
     var volanta = document.querySelector('#inputVolanta').value;
     document.querySelector('#volanta').innerHTML = volanta;
+};
+
+function cargarImagen(){
+    var epigrafe = document.querySelector('#inputEpigrafe').value;
+    var urlImg = document.querySelector('#inputUrlImg').value;
+    if( urlImg.match(/\.(jpeg|jpg|gif|png)$/) != null ){
+    document.querySelector('#urlImg').src = urlImg;
+    document.querySelector('#epigrafe').innerHTML = epigrafe;
+    console.log(epigrafe);
+    }else{
+        document.querySelector('#urlImg').src = '';
+        document.querySelector('#epigrafe').innerHTML = '';
+    };
+    // https://d500.epimg.net/cincodias/imagenes/2018/11/13/lifestyle/1542113135_776401_1542116070_noticia_normal.jpg
 };
 
 function cargarCuerpo(){
