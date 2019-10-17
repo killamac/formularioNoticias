@@ -12,25 +12,45 @@
     
     <div class="container-fluid" id="divFormu">
 
-        <h3>Ingrse informacion de la noticia: </h3>
+        <div class="container-fluid">
+            <h3>Noticia principal: </h3>
 
-        <form id="form">
+            <form id="form">
 
-                <label for="inputTitulo">Ingrese Titulo</label>
-                <input type="text" id="inputTitulo"><br>
-    
-                <label for="inputSubtitulo">Ingrese subtitulo</label>
-                <input type="text" id="inputSubTitulo"><br>
-    
-                <label for="inputVolanta">Ingrese volanta</label>
-                <input type="text" id="inputVolanta"><br>
-    
-                <label for="inputCuerpo">Ingrese cuerpo de la Noticia</label>
-                <input type="text" id="inputCuerpo"><br>
-    
-        </form>
+                    <label for="inputTitulo">Ingrese Titulo</label>
+                    <input type="text" id="inputTitulo"><br>
+        
+                    <label for="inputSubtitulo">Ingrese subtitulo</label>
+                    <input type="text" id="inputSubTitulo"><br>
+        
+                    <label for="inputVolanta">Ingrese volanta</label>
+                    <input type="text" id="inputVolanta"><br>
+        
+                    <label for="inputCuerpo">Ingrese cuerpo de la Noticia</label>
+                    <input type="text" id="inputCuerpo"><br>
 
-        <button id="vistaPreviaButton">Vista Previa</button><br>
+        
+            </form>
+
+            <button id="vistaPreviaButton">Vista Previa</button><br>
+
+        </div>
+        <hr>
+        <div class="container-fluid" id="divFormLateral">
+
+            <form id="formLateral">
+
+                <h4>Barra lateral de noticias</h4>
+                <h5>Cargue noticias de a una y presione enviar para cargar otra</h5>
+
+                <label for="input">Ingrese Titulo</label>
+                <input type="text" id="inputNoticiaLateral"><br>
+
+            </form>
+
+            <button id="enviarLateralButton">Enviar</button>
+
+        </div>
 
     </div>
 
@@ -53,13 +73,8 @@
                 
             <div class="col-4">
 
-                    <ul class="list-unstyled">
-                            <li class="media">
-                                <div class="media-body" id="media-body">
-                                <h5 class="mt-0 mb-1">titulo noticia media</h5>
-                                    <p>cuerpo noticia media</p>
-                                </div>
-                            </li>
+                    <ul class="list-unstyled" id="listaLateral">
+                        
                     </ul>
 
             </div>

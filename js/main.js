@@ -1,5 +1,5 @@
 'use strict'
-
+var noticiasLaterales = [];
 var divNoticia = document.querySelector('#divNoticia');
 var divFormu = document.querySelector('#divFormu');
 
@@ -16,11 +16,22 @@ editButton.addEventListener('click', function(){
     divNoticia.style.display ='none';
 });
 
+var enviarLateralButton = document.querySelector('#enviarLateralButton');
+enviarLateralButton.addEventListener('click', function(){
+    guardarNoticiaLateral();
+});
+
+var formLateral = document.querySelector('#formLateral');
+formLateral.addEventListener('submit', function(){
+
+});
+
 function cargarNoticia(){
     cargarTitulo();
     cargarSubTitulo();
     cargarVolanta();
     cargarCuerpo();
+    cargarNoticiasLaterales();
 };
 
 function cargarTitulo(){
@@ -41,4 +52,30 @@ function cargarVolanta(){
 function cargarCuerpo(){
     var cuerpo = document.querySelector('#inputCuerpo').value;
     document.querySelector('#cuerpo').innerHTML = cuerpo;
-}
+};
+
+function guardarNoticiaLateral(){
+    var inputNoticiaLateral = document.querySelector('#inputNoticiaLateral');
+    var noticiaLateral = inputNoticiaLateral.value;
+    inputNoticiaLateral.value = '';
+    noticiasLaterales.push(noticiaLateral);
+
+    console.log('guardada noticia lateral');
+    console.log(noticiasLaterales);
+};
+
+var listaLateral = document.querySelector('#listaLateral');
+var i = 1;
+function cargarNoticiasLaterales(){
+    noticiasLaterales.forEach( function( noticiaLateral ){//recorro el array de noticias y los cargo a la barra lateral en el dom
+        var li = document.createElement('LI'); 
+        li.className = 'media border-bottom';
+        li.innerHTML ='<h4 class="mt-3 mr-3">'+ i +'</h4><div class="media-body">'+ noticiaLateral +'</div>';
+        listaLateral.appendChild (li);
+        i++;
+        console.log('cargado lateral ' +i);
+        console.log(li);
+        console.log(listaLateral.innerHTML);
+    });
+
+};
